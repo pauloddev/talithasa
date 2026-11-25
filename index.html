@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talitha Sá | Moda Feminina em Caruaru</title>
+<meta name="description" content="Para mulheres da vida real! Moda feminina no varejo desde 2009 em Caruaru-PE.">
+<meta property="og:title" content="Talitha Sá | Moda Feminina">
+<meta property="og:description" content="Para mulheres da vida real!">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://raw.githubusercontent.com/pauloddev/talithasa/main/og.jpg">
+<meta property="og:image:secure_url" content="https://raw.githubusercontent.com/pauloddev/talithasa/main/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo Talitha Sá">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/pauloddev/talithasa/main/og.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="icon" href="logo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#c3c4c9;--ink:#4a4b4e;--soft:#5f6062;--hi:#dcdde1;--lo:#9fa0a6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:300 16px/1.5 Jost,sans-serif;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+main{max-width:500px;margin:0 auto;padding:0 20px 36px;text-align:center}
+header img{display:block;width:100%;height:auto;max-width:340px;margin:0 auto;aspect-ratio:1}
+h1{font:400 clamp(30px,8.6vw,40px)/1.2 Sacramento,cursive;margin:2px 0 20px}
+.out{background:var(--bg);box-shadow:7px 7px 16px var(--lo),-7px -7px 16px var(--hi)}
+.in{box-shadow:inset 5px 5px 11px var(--lo),inset -5px -5px 11px var(--hi)}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.chip{border-radius:18px;padding:13px 8px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+.chip b{display:block;font-weight:500;font-size:15px;letter-spacing:.12em}
+.btn{display:flex;align-items:center;gap:14px;width:100%;margin-top:16px;padding:10px 16px 10px 10px;border:0;border-radius:50px;font:400 15px Jost,sans-serif;letter-spacing:.06em;color:var(--ink);text-decoration:none;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:scale(.98);box-shadow:inset 4px 4px 9px var(--lo),inset -4px -4px 9px var(--hi)}
+.btn i{display:grid;place-items:center;flex:0 0 44px;height:44px;border-radius:50%;background:#5f6062;color:#f1f1f3;transition:transform .35s}
+.btn:hover i{transform:rotate(-10deg) scale(1.07)}
+.btn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn span{flex:1}.btn small{display:block;font-size:12px;color:var(--soft);letter-spacing:.03em}
+.btn em{font-style:normal;font-size:20px;transition:transform .2s}.btn:hover em{transform:translateX(4px)}
+h2{font:400 34px Sacramento,cursive;margin:38px 0 8px}
+.car{position:relative;margin:0 -20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);overflow:hidden;touch-action:pan-y;user-select:none}
+.car.vid{height:calc(min(58vw,270px)*16/9 + 30px)}
+.car.pic{height:calc(min(60vw,285px)*4/3 + 30px)}
+.item{position:absolute;top:15px;left:50%;border-radius:22px;overflow:hidden;background:#b4b5ba;box-shadow:0 8px 20px rgba(50,50,60,.28);cursor:pointer;transition:transform .6s cubic-bezier(.3,.8,.3,1),opacity .6s}
+.vid .item{width:min(58vw,270px);aspect-ratio:9/16;margin-left:calc(min(58vw,270px)/-2)}
+.pic .item{width:min(60vw,285px);aspect-ratio:3/4;margin-left:calc(min(60vw,285px)/-2)}
+.item img,.item video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.snd{position:absolute;right:10px;bottom:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(40,40,45,.6);color:#fff;font-size:17px;cursor:pointer;display:none}
+.on .snd{display:block}
+.nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:6px}
+.nav button{width:40px;height:40px;border:0;border-radius:50%;font-size:20px;color:var(--ink);cursor:pointer}
+.nav p{min-width:60px;font-size:13px;letter-spacing:.1em}
+.loja{max-width:360px;margin:6px auto 4px;padding:10px;border-radius:28px}
+.loja img{display:block;width:100%;height:auto;border-radius:20px}
+footer{margin-top:34px;font-size:12px;letter-spacing:.08em;color:var(--soft)}
+#toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,150px);background:#4a4b4e;color:#fff;padding:11px 20px;border-radius:30px;font-size:14px;width:max-content;max-width:90vw;transition:transform .35s;z-index:99;visibility:hidden}
+#toast.show{transform:translate(-50%,0);visibility:visible}
+</style>
+</head>
+<body>
+<main>
+<header><img src="logo.jpg" alt="Talitha Sá" width="1080" height="1080"><h1>Para mulheres da vida real!</h1></header>
+
+<div class="chips">
+<div class="chip in"><b>Varejo</b>desde 2009</div>
+<div class="chip in"><b>Caruaru</b>Pernambuco</div>
+</div>
+<a class="btn out" data-link="whatsapp"><i><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg></i><span>Compre on-line<small>Enviamos até você 📦🤍</small></span><em>→</em></a>
+
+<section aria-label="Vídeos">
+<h2>Nossos looks em movimento</h2>
+<div class="car vid" id="vids"></div>
+<div class="nav"><button class="out" data-c="v" data-d="-1" aria-label="Vídeo anterior">‹</button><p id="vn"></p><button class="out" data-c="v" data-d="1" aria-label="Próximo vídeo">›</button></div>
+</section>
+
+<section aria-label="Fotos">
+<h2>Vitrine</h2>
+<div class="car pic" id="pics"></div>
+<div class="nav"><button class="out" data-c="p" data-d="-1" aria-label="Foto anterior">‹</button><p id="pn"></p><button class="out" data-c="p" data-d="1" aria-label="Próxima foto">›</button></div>
+</section>
+
+<h2>Fale com a gente</h2>
+<a class="btn out" data-link="whatsapp"><i><svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3 3zM9 8.500c0 4 2.500 6.500 6.500 6.500l1-1.500-2.300-1.100-1 1c-1.200-.500-2.100-1.400-2.600-2.600l1-1L10.500 7.500z"/></svg></i><span>WhatsApp<small>Atendimento e pedidos</small></span><em>→</em></a>
+<a class="btn out" data-link="instagram"><i><svg viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg></i><span>Instagram<small>Novidades e looks do dia</small></span><em>→</em></a>
+
+<section aria-label="Nossa loja">
+<h2>Nossa loja</h2>
+<figure class="loja out"><img src="loja.jpg" alt="Fachada da loja Talitha Sá" width="382" height="510" loading="lazy"></figure>
+<a class="btn out" data-link="maps"><i><svg viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11.500a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></i><span>Localização<small>Caruaru | PE</small></span><em>→</em></a>
+</section>
+<footer>Talitha Sá · Moda feminina desde 2009</footer>
+</main>
+<div id="toast" role="status"></div>
+
+<script>
+/* ===== PREENCHA OS LINKS DA CLIENTE AQUI ===== */
+const LINKS={
+  whatsapp:"",   // ex.: https://wa.me/5581900000000
+  instagram:"",  // ex.: https://instagram.com/usuario
+  maps:"https://www.google.com/maps/search/?api=1&query=Talitha+S%C3%A1+Moda+Feminina+Caruaru+PE" // trocar pelo link exato da loja
+};
+let tt;
+document.querySelectorAll('[data-link]').forEach(a=>{
+  const u=LINKS[a.dataset.link];
+  if(u){a.href=u;a.target='_blank';a.rel='noopener'}
+  else{a.href='#';a.onclick=e=>{e.preventDefault();toast.textContent='Link em breve';toast.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('show'),2200)}}
+});
+function carousel(el,n,build,counter,onShow){
+  let cur=0;
+  const items=Array.from({length:n},(_,i)=>{const d=document.createElement('div');d.className='item';build(d,i);el.appendChild(d);d.addEventListener('click',()=>{if(!moved&&i!==cur)go(i)});return d});
+  function go(i){
+    cur=(i+n)%n;
+    const w=items[0].offsetWidth;
+    items.forEach((d,k)=>{
+      let o=(k-cur+n)%n;if(o>n/2)o-=n;
+      const a=Math.abs(o),s=a===0?1:.76;
+      d.style.transform=`translateX(${Math.sign(o)*(a?w*.93+(a-1)*w*.8:0)}px) scale(${s})`;
+      d.style.opacity=a===0?1:a===1?.65:0;
+      d.style.zIndex=10-a;d.style.pointerEvents=a>1?'none':'auto';
+      d.classList.toggle('on',!o);
+    });
+    counter.textContent=(cur+1)+' / '+n;
+    onShow(cur,items);
+  }
+  let x=null,moved=false;
+  el.addEventListener('pointerdown',e=>{x=e.clientX;moved=false});
+  window.addEventListener('pointerup',e=>{if(x===null)return;const d=e.clientX-x;x=null;if(Math.abs(d)>40){moved=true;go(cur+(d<0?1:-1))}});
+  addEventListener('resize',()=>go(cur));
+  return{go,step:d=>go(cur+d),get cur(){return cur},items};
+}
+let muted=true,vVis=false,pVis=false,timer;
+const V=8;
+const vc=carousel(vids,V,(d,i)=>{
+  d.innerHTML=`<video muted playsinline preload="none" poster="v/v${i+1}.jpg" data-src="v/v${i+1}.mp4"></video>`+(i===5?'':'<button class="snd" aria-label="Ligar ou desligar o som">🔇</button>');
+  d.firstChild.addEventListener('ended',()=>vc.step(1));
+  const b=d.querySelector('button');
+  if(b)b.onclick=e=>{e.stopPropagation();muted=!muted;sync()};
+},vn,()=>{vc&&sync(true)});
+function sync(restart){
+  const c=vc?vc.cur:0;
+  (vc?vc.items:[...vids.children]).forEach((d,k)=>{
+    const v=d.firstChild,b=d.querySelector('button');
+    if(b)b.textContent=muted?'🔇':'🔊';
+    if(k===c&&vVis){
+      if(!v.src)v.src=v.dataset.src;
+      if(restart===true&&v.readyState)v.currentTime=0;
+      v.muted=muted;v.play().catch(()=>{v.muted=muted=true;v.play().catch(()=>{})});
+    }else v.pause();
+  });
+}
+const pc=carousel(pics,11,(d,i)=>{d.innerHTML=`<img src="f/look${i+1}.jpg" alt="Look Talitha Sá ${i+1}" loading="lazy" draggable="false">`},pn,()=>{clearInterval(timer);timer=setInterval(()=>{if(pVis&&!document.hidden)pc.step(1)},3200)});
+vc.go(0);pc.go(0);
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>(b.dataset.c==='v'?vc:pc).step(+b.dataset.d));
+new IntersectionObserver(([e])=>{vVis=e.isIntersecting;sync()},{threshold:.35}).observe(vids);
+new IntersectionObserver(([e])=>{pVis=e.isIntersecting},{threshold:.35}).observe(pics);
+</script>
+</body>
+</html>
