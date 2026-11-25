@@ -18,7 +18,7 @@
 <meta name="twitter:image" content="https://raw.githubusercontent.com/pauloddev/talithasa/main/og.jpg">
 <link rel="apple-touch-icon" href="logo.jpg">
 <link rel="icon" href="logo.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#c3c4c9;--ink:#4a4b4e;--soft:#5f6062;--hi:#dcdde1;--lo:#9fa0a6}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -39,7 +39,10 @@ h1{font:400 clamp(30px,8.6vw,40px)/1.2 Sacramento,cursive;margin:2px 0 20px}
 .btn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .btn span{flex:1}.btn small{display:block;font-size:12px;color:var(--soft);letter-spacing:.03em}
 .btn em{font-style:normal;font-size:20px;transition:transform .2s}.btn:hover em{transform:translateX(4px)}
-h2{font:400 34px Sacramento,cursive;margin:38px 0 8px}
+h2{font:italic 500 clamp(28px,8vw,34px)/1.15 "Cormorant Garamond",Georgia,serif;margin:0 0 12px}
+.eye{display:flex;align-items:center;justify-content:center;gap:12px;margin:50px 0 6px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--soft)}
+.eye::before,.eye::after{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--soft))}
+.eye::after{transform:scaleX(-1)}
 .car{position:relative;margin:0 -20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);overflow:hidden;touch-action:pan-y;user-select:none}
 .car.vid{height:calc(min(58vw,270px)*16/9 + 30px)}
 .car.pic{height:calc(min(60vw,285px)*4/3 + 30px)}
@@ -52,9 +55,31 @@ h2{font:400 34px Sacramento,cursive;margin:38px 0 8px}
 .nav{display:flex;justify-content:center;align-items:center;gap:16px;margin-top:6px}
 .nav button{width:40px;height:40px;border:0;border-radius:50%;font-size:20px;color:var(--ink);cursor:pointer}
 .nav p{min-width:60px;font-size:13px;letter-spacing:.1em}
-.loja{max-width:360px;margin:6px auto 4px;padding:10px;border-radius:28px}
-.loja img{display:block;width:100%;height:auto;border-radius:20px}
-footer{margin-top:34px;font-size:12px;letter-spacing:.08em;color:var(--soft)}
+.loja{margin:6px 0 0;padding:9px;border-radius:28px}
+.loja img{display:block;width:100%;height:auto;aspect-ratio:4/3;border-radius:20px}
+footer{margin-top:46px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+footer b{display:block;font:400 34px Sacramento,cursive;letter-spacing:0;text-transform:none;color:var(--ink)}
+footer::before{content:"";display:block;width:90px;height:1px;margin:0 auto 18px;background:linear-gradient(90deg,transparent,var(--soft),transparent)}
+.btn.main{background:linear-gradient(135deg,#57585c,#3d3e42);color:#f4f4f6;box-shadow:7px 9px 18px rgba(60,60,70,.38),-6px -6px 14px var(--hi);position:relative;overflow:hidden}
+.btn.main small{color:#d3d4d8}.btn.main i{background:#e9eaed;color:#45464a}
+.btn.main::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-90px;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-90px}90%,100%{left:115%}}
+.card{border-radius:28px;padding:22px 18px;margin-top:20px}
+.addr{font-style:normal;font-size:15px;line-height:1.75;letter-spacing:.03em}
+.addr b,.card h3{display:block;font:italic 500 23px "Cormorant Garamond",Georgia,serif;margin-bottom:4px}
+#status{display:inline-flex;align-items:center;gap:8px;margin:2px 0 12px;padding:6px 14px;border-radius:30px;font-size:12px;letter-spacing:.06em}
+#status::before{content:"";width:8px;height:8px;border-radius:50%;background:#8c3f45}
+#status.open::before{background:#2f7d4f}
+#status:empty{display:none}
+.hours{list-style:none;text-align:left}
+.hours li{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;font-size:14.5px;font-variant-numeric:tabular-nums;border-radius:14px}
+.hours li+li{margin-top:2px}
+.hours li.today{font-weight:500;background:rgba(255,255,255,.34)}
+.fab{position:fixed;right:max(16px,calc(50vw - 330px));bottom:18px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#45464a;color:#fff;box-shadow:0 8px 22px rgba(40,40,50,.4);z-index:50;transition:transform .25s,opacity .3s}
+.fab:hover{transform:scale(1.08)}.fab.hide{opacity:0;pointer-events:none;transform:translateY(20px)}
+.fab svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}.rv.vis{opacity:1;transform:none}.btn.rv.vis:hover{transform:translateY(-3px);transition-duration:.2s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.btn.main::after{animation:none;display:none}}
 #toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,150px);background:#4a4b4e;color:#fff;padding:11px 20px;border-radius:30px;font-size:14px;width:max-content;max-width:90vw;transition:transform .35s;z-index:99;visibility:hidden}
 #toast.show{transform:translate(-50%,0);visibility:visible}
 </style>
@@ -67,39 +92,56 @@ footer{margin-top:34px;font-size:12px;letter-spacing:.08em;color:var(--soft)}
 <div class="chip in"><b>Varejo</b>desde 2009</div>
 <div class="chip in"><b>Caruaru</b>Pernambuco</div>
 </div>
-<a class="btn out" data-link="whatsapp"><i><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg></i><span>Compre on-line<small>Enviamos até você 📦🤍</small></span><em>→</em></a>
+<a class="btn main" data-link="whatsapp"><i><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg></i><span>Compre on-line<small>Enviamos até você 📦🤍</small></span><em>→</em></a>
 
 <section aria-label="Vídeos">
-<h2>Nossos looks em movimento</h2>
+<p class="eye">Em movimento</p><h2>Nossos looks</h2>
 <div class="car vid" id="vids"></div>
 <div class="nav"><button class="out" data-c="v" data-d="-1" aria-label="Vídeo anterior">‹</button><p id="vn"></p><button class="out" data-c="v" data-d="1" aria-label="Próximo vídeo">›</button></div>
 </section>
 
 <section aria-label="Fotos">
-<h2>Vitrine</h2>
+<p class="eye">Inspire-se</p><h2>Vitrine</h2>
 <div class="car pic" id="pics"></div>
 <div class="nav"><button class="out" data-c="p" data-d="-1" aria-label="Foto anterior">‹</button><p id="pn"></p><button class="out" data-c="p" data-d="1" aria-label="Próxima foto">›</button></div>
 </section>
 
-<h2>Fale com a gente</h2>
-<a class="btn out" data-link="whatsapp"><i><svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3 3zM9 8.500c0 4 2.500 6.500 6.500 6.500l1-1.500-2.300-1.100-1 1c-1.200-.500-2.100-1.400-2.600-2.600l1-1L10.500 7.500z"/></svg></i><span>WhatsApp<small>Atendimento e pedidos</small></span><em>→</em></a>
-<a class="btn out" data-link="instagram"><i><svg viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg></i><span>Instagram<small>Novidades e looks do dia</small></span><em>→</em></a>
+<p class="eye">Atendimento</p><h2>Fale com a gente</h2>
+<a class="btn out" data-link="whatsapp"><i><svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3 3zM9 8.500c0 4 2.500 6.500 6.500 6.500l1-1.500-2.300-1.100-1 1c-1.200-.500-2.100-1.400-2.600-2.600l1-1L10.500 7.500z"/></svg></i><span>WhatsApp<small>(81) 98313-3744</small></span><em>→</em></a>
+<a class="btn out" data-link="instagram"><i><svg viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg></i><span>Instagram<small>@lojatalithasa</small></span><em>→</em></a>
 
-<section aria-label="Nossa loja">
-<h2>Nossa loja</h2>
-<figure class="loja out"><img src="loja.jpg" alt="Fachada da loja Talitha Sá" width="382" height="510" loading="lazy"></figure>
-<a class="btn out" data-link="maps"><i><svg viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11.500a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></i><span>Localização<small>Caruaru | PE</small></span><em>→</em></a>
+<section aria-label="Onde estamos">
+<p class="eye">Visite a loja</p><h2>Onde estamos</h2>
+<figure class="loja out"><img src="loja.jpg" alt="Fachada da loja Talitha Sá" width="1200" height="900" loading="lazy"></figure>
+<div class="card out">
+<address class="addr"><b>Endereço</b>Av. Maj. Manoel de Freitas, 37<br>Maurício de Nassau<br>Caruaru - PE</address>
+</div>
+<a class="btn main" data-link="maps"><i><svg viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11.500a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></i><span>Como chegar<small>Abrir no Google Maps</small></span><em>→</em></a>
+<div class="card out">
+<h3>Horários de funcionamento</h3>
+<p id="status" class="in"></p>
+<ul class="hours">
+<li data-d="1"><span>Segunda-feira</span><span>09:00–19:00</span></li>
+<li data-d="2"><span>Terça-feira</span><span>09:00–19:00</span></li>
+<li data-d="3"><span>Quarta-feira</span><span>09:00–19:00</span></li>
+<li data-d="4"><span>Quinta-feira</span><span>09:00–19:00</span></li>
+<li data-d="5"><span>Sexta-feira</span><span>09:00–19:00</span></li>
+<li data-d="6"><span>Sábado</span><span>09:00–14:00</span></li>
+<li data-d="0"><span>Domingo</span><span>Fechado</span></li>
+</ul>
+</div>
 </section>
-<footer>Talitha Sá · Moda feminina desde 2009</footer>
+<footer><b>Talitha Sá</b>Moda feminina desde 2009</footer>
 </main>
+<a class="fab" data-link="whatsapp" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3 3zM9 8.5c0 4 2.5 6.5 6.5 6.5l1-1.5-2.3-1.1-1 1c-1.2-.5-2.1-1.4-2.6-2.6l1-1-1.1-2.3z"/></svg></a>
 <div id="toast" role="status"></div>
 
 <script>
-/* ===== PREENCHA OS LINKS DA CLIENTE AQUI ===== */
+/* ===== LINKS DA CLIENTE ===== */
 const LINKS={
-  whatsapp:"",   // ex.: https://wa.me/5581900000000
-  instagram:"",  // ex.: https://instagram.com/usuario
-  maps:"https://www.google.com/maps/search/?api=1&query=Talitha+S%C3%A1+Moda+Feminina+Caruaru+PE" // trocar pelo link exato da loja
+  whatsapp:"https://wa.me/5581983133744",
+  instagram:"https://www.instagram.com/lojatalithasa/",
+  maps:"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Av. Maj. Manoel de Freitas, 37 - Maurício de Nassau, Caruaru - PE")
 };
 let tt;
 document.querySelectorAll('[data-link]').forEach(a=>{
@@ -155,6 +197,27 @@ vc.go(0);pc.go(0);
 document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>(b.dataset.c==='v'?vc:pc).step(+b.dataset.d));
 new IntersectionObserver(([e])=>{vVis=e.isIntersecting;sync()},{threshold:.35}).observe(vids);
 new IntersectionObserver(([e])=>{pVis=e.isIntersecting},{threshold:.35}).observe(pics);
+/* aberto/fechado no horário de Caruaru */
+(function(){
+  const H={1:[9,19],2:[9,19],3:[9,19],4:[9,19],5:[9,19],6:[9,14]};
+  function upd(){
+    const n=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Recife'}));
+    const d=n.getDay(),t=n.getHours()+n.getMinutes()/60,h=H[d],open=!!h&&t>=h[0]&&t<h[1];
+    document.querySelectorAll('.hours li').forEach(li=>li.classList.toggle('today',+li.dataset.d===d));
+    let msg='Fechado agora';
+    if(open)msg='Aberto agora · até '+h[1]+'h';
+    else if(h&&t<h[0])msg='Fechado agora · abre às 9h';
+    status_.textContent=msg;status_.classList.toggle('open',open);
+  }
+  const status_=document.getElementById('status');upd();setInterval(upd,60000);
+})();
+/* entrada suave das seções e botão flutuante */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.06});
+document.querySelectorAll('main>section,main>a.btn,main>.eye,main>h2,footer').forEach(el=>{el.classList.add('rv');io.observe(el)});
+/* esconde o botão flutuante quando um botão de WhatsApp já está na tela */
+const seen=new Set(),fab=document.querySelector('.fab');
+const fo=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));fab.classList.toggle('hide',seen.size>0)});
+document.querySelectorAll('main a[data-link=whatsapp],footer').forEach(a=>fo.observe(a));
 </script>
 </body>
 </html>
